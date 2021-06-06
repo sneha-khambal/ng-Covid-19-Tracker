@@ -2,6 +2,7 @@
  <div class="jubotron  mx-3 my-3"  >
      <h1 class="display-4">Corona Covid-19 Tracker</h1>
      <hr>
+<<<<<<< HEAD
      <div style="width: auto; height:100px; margin-top:5% " *ngIf="loading" >
     <h1 class="loading text-center"> Loading   
       <div class="loader"> </div>
@@ -9,6 +10,11 @@
       <div class="loader"> </div></h1>
     
     </div>
+=======
+     <div class="ui inverted dimmer" [class.active]='loading'>
+      <div class="ui text loader">Loading</div>
+  </div>
+>>>>>>> a306674 (first commit)
       <app-dashbord-card   *ngIf="!loading"
        [totalRecoverd]='totalRecoverd'
        [totalConfirmed]='totalConfirmed'
@@ -20,6 +26,7 @@
  <div class="ui form mx-3 my-3">
   <div class="inline fields">
    <label class="pl-2 pr-2 h5" > Select Case Type:</label> 
+<<<<<<< HEAD
         <input type="radio"  #c  (click)="updateChart(c)" name="caseType" id="c" value="C" checked="" tabindex="0" class="hidden" value="{{totalConfirmed}}">
         <label for="c" class="pl-2 pr-2 h6"   > Confirmed</label>
         <input type="radio"  #r (click)="updateChart(r)" name="caseType"  id="r"  value="R" tabindex="0" class="hidden">
@@ -27,13 +34,27 @@
          <input type="radio"  #d (click)="updateChart(d)" name="caseType" id="d"  value="D" tabindex="0" class="hidden">
         <label for="d" class="pl-2 pr-2 h6"  >   Deaths</label>
          <input type="radio" #a (click)="updateChart(a)" name="caseType" id="a"  value="A" tabindex="0" class="hidden">
+=======
+        <input type="radio"  #c  (click)="updateChart(c)" name="caseType" id="c" value="c" checked="" tabindex="0" class="hidden" value="{{totalConfirmed}}">
+        <label for="c" class="pl-2 pr-2 h6"   > Confirmed</label>
+        <input type="radio"  #r (click)="updateChart(r)" name="caseType"  id="r"  value="r" tabindex="0" class="hidden">
+        <label for="r" class="pl-2 pr-2 h6"   >  Recovered</label>
+         <input type="radio"  #d (click)="updateChart(d)" name="caseType" id="d"  value="d" tabindex="0" class="hidden">
+        <label for="d" class="pl-2 pr-2 h6"  >   Deaths</label>
+         <input type="radio" #a (click)="updateChart(a)" name="caseType" id="a"  value="a" tabindex="0" class="hidden">
+>>>>>>> a306674 (first commit)
         <label for="a" class="pl-2 pr-2 h6"  >   Active</label>
     </div>
    
   <div class="row">
    
+<<<<<<< HEAD
     <div class="  col-sm-12" id="curve_chart"  ></div>
     <div class="  col-sm-12" id="pie_chart"  ></div>
+=======
+    <div class=" mx-3 col-sm-12" id="curve_chart"  ></div>
+    <div class="mx-3 col-sm-12" id="pie_chart"  ></div>
+>>>>>>> a306674 (first commit)
   </div>
  </div>
 
