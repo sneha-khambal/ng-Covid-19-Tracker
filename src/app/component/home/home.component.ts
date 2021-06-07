@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   totalDeath =0;
   totalRecoverd =0;
   totalActive =0;
+ 
   loading = true;
   dataValue:number ;   
  globalData :GlobalSummary[];
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit {
          this.dataValue = cs.recovered;
         datatable.push([
            cs.country , this.dataValue])
+         
      }
     );
     
@@ -52,20 +54,22 @@ export class HomeComponent implements OnInit {
   var options = { height:500 };
   var chart = new google.visualization.ColumnChart(document.getElementById('curve_chart'));
   chart.draw(data, options);
+  
     }
     //google-pieChart
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart1);
 
-    function drawChart1() {
+    function drawChart1(){
  var data = google.visualization.arrayToDataTable(datatable);
  var options = {  height:500  };
   var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
   chart.draw(data, options);
+  
    } }
 
    ngOnInit(): void {
- this.loading;
+  
  this.dataService.getGlobalData().subscribe(
  {  next : (result)=>{
      this.globalData =result;
@@ -76,7 +80,7 @@ export class HomeComponent implements OnInit {
                this.totalDeath += cs.death,
                this.totalRecoverd += cs.recovered
              }
-        this.initChart('d');
+        this.initChart('c');
           } 
            ) },
         complete : ()=>{
@@ -85,5 +89,8 @@ export class HomeComponent implements OnInit {
 
   updateChart(input :HTMLInputElement ){
     this.initChart(input.value );
-  } }
+   
+  } 
+ 
+}
  
